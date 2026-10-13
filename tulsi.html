@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organic India Tulsi Lander</title>
+<meta name="description" content="Organic India herbal teas and supplements, traceable to the farmers who grow them. Find a store near you or shop online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Brand fonts: drop the licensed files next to this page (or on the Shopify/WP CDN) and they take over automatically.
+   Until then Rubik / Figtree load as stand-ins. */
+@font-face{font-family:"AIOA Rubik";src:local("AIOA Rubik"),url("fonts/AIOARubik.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"FFMarkStdBook";src:local("FFMarkStdBook"),local("FF Mark Std Book"),url("fonts/FFMarkStdBook.woff2") format("woff2");font-display:swap}
+
+:root{
+  --ink:#00210D;          /* deepest green: text, dark bands */
+  --primary:#006E3B;      /* primary CTA, headings accents */
+  --primary-2:#198754;    /* hover / secondary green */
+  --mint:#20C997;         /* highlights on dark */
+  --bg:#F3F8FD;           /* page background */
+  --card:#FFFFFF;
+  --line:#CACED1;         /* borders */
+  --mute:#B0BEC5;         /* quiet fills */
+  --silver:#C0C0C0;
+  --alert:#DC3545;
+  --warm:#FD7E14;         /* promo bar + badges */
+  --plum:#6F42C1;
+  --blue:#0D6EFD;         /* links */
+  --text:#00210D;
+  --text-2:#3d5a49;
+  --radius:16px;
+  --max:1120px;
+  --font-head:"AIOA Rubik","Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"FFMarkStdBook","Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;padding-bottom:76px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.12;letter-spacing:-.01em;font-weight:600}
+.eyebrow{font-family:var(--font-head);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);font-weight:600;font-size:1.02rem;padding:16px 28px;border-radius:999px;border:2px solid var(--primary);background:var(--primary);color:#fff;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s;min-height:52px}
+.btn:hover{background:var(--primary-2);border-color:var(--primary-2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--primary)}
+.btn.ghost:hover{background:var(--primary);color:#fff}
+.btn.light{background:#fff;color:var(--ink);border-color:#fff}
+.btn.light:hover{background:var(--mint);border-color:var(--mint)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* promo bar */
+.promo{background:var(--warm);color:var(--ink);text-align:center;font-family:var(--font-head);font-weight:500;font-size:.88rem;padding:10px 16px}
+.promo b{font-weight:700}
+
+/* header (no nav on a DR page) */
+header.top{background:var(--card);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{height:34px;width:auto}
+.logo .word{font-family:var(--font-head);font-weight:700;font-size:1.15rem;color:var(--primary);display:none}
+.logo.noimg .word{display:block}
+.top-links{display:flex;gap:10px;align-items:center}
+.top-links .btn{padding:10px 18px;min-height:44px;font-size:.9rem}
+.top-links .btn.ghost{display:none}
+
+/* hero */
+.hero{padding:40px 0 56px;background:radial-gradient(1100px 500px at 85% -10%,#e4f3ea 0,transparent 60%),var(--bg)}
+.hero .wrap{display:grid;gap:36px}
+.stars{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--text-2);margin-bottom:16px}
+.stars .s{color:var(--warm);letter-spacing:2px;font-size:1.05rem}
+.hero h1{font-size:clamp(2.1rem,7vw,3.7rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--primary)}
+.hero p.sub{font-size:1.12rem;color:var(--text-2);max-width:34ch;margin-bottom:26px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.micro{font-size:.85rem;color:var(--text-2)}
+.micro span{white-space:nowrap}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;margin:0 auto}
+.disc{position:absolute;inset:6%;border-radius:50%;background:linear-gradient(145deg,var(--primary) 0,var(--ink) 100%)}
+.slot{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:2px dashed rgba(255,255,255,.55);border-radius:18px;color:#fff;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font-head);background:rgba(255,255,255,.08);padding:8px}
+.slot.a{left:20%;top:26%;width:34%;height:56%;transform:rotate(-6deg)}
+.slot.b{left:48%;top:20%;width:32%;height:62%;transform:rotate(5deg)}
+.slot svg{width:34px;height:34px;margin-bottom:6px;opacity:.8}
+.badge-float{position:absolute;right:2%;bottom:10%;background:var(--card);border-radius:14px;padding:12px 16px;box-shadow:0 10px 30px rgba(0,33,13,.18);font-family:var(--font-head);font-size:.82rem;line-height:1.3}
+.badge-float b{display:block;font-size:1.5rem;color:var(--primary)}
+
+/* cert strip */
+.certs{background:var(--card);border-block:1px solid var(--line);padding:20px 0}
+.certs ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;font-family:var(--font-head);font-size:.82rem;font-weight:500;color:var(--text-2)}
+.certs li{display:flex;align-items:center;gap:8px}
+.certs li::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--primary-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+
+/* sections */
+section{padding:64px 0}
+.head{max-width:640px;margin-bottom:34px}
+.head h2{font-size:clamp(1.7rem,5vw,2.5rem);margin:8px 0 12px}
+.head p{color:var(--text-2)}
+
+/* reasons */
+.reasons{display:grid;gap:18px}
+.reason{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.reason .n{font-family:var(--font-head);font-weight:700;font-size:2.4rem;color:var(--mint);line-height:1}
+.reason h3{font-size:1.25rem;margin:10px 0 8px}
+.reason p{color:var(--text-2);font-size:.98rem}
+
+/* WHERE TO FIND */
+#find{background:var(--ink);color:#fff;border-radius:28px;margin:0 12px}
+#find .eyebrow{color:var(--mint)}
+#find .head p{color:#c9dccf}
+.finder{display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.finder>*{min-width:0}
+.panel{background:var(--card);color:var(--text);border-radius:var(--radius);padding:24px}
+.tabs{display:flex;gap:6px;background:var(--bg);padding:5px;border-radius:999px;margin-bottom:20px;border:1px solid var(--line)}
+.tabs button{flex:1;font-family:var(--font-head);font-weight:500;font-size:.92rem;padding:11px 10px;border:0;border-radius:999px;background:transparent;color:var(--text-2);cursor:pointer;min-height:44px}
+.tabs button[aria-selected="true"]{background:var(--primary);color:#fff}
+.tabpanel[hidden]{display:none}
+label.lbl{display:block;font-family:var(--font-head);font-size:.82rem;font-weight:500;margin-bottom:6px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row input,.row select{flex:1 1 100%;min-width:0;font:inherit;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--text);min-height:52px}
+.row input:focus,.row select:focus{border-color:var(--primary);outline:none;box-shadow:0 0 0 3px rgba(32,201,151,.35)}
+.row .btn{flex:1 1 100%}
+.err{color:var(--alert);font-size:.85rem;margin-top:8px;min-height:1.2em}
+.geo{background:none;border:0;color:var(--blue);font:inherit;font-size:.92rem;text-decoration:underline;cursor:pointer;margin-top:12px;padding:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-family:var(--font-head);font-size:.78rem;font-weight:500;padding:7px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--text-2)}
+.chip.on{background:#e3f6ee;border-color:var(--primary-2);color:var(--primary)}
+.retail{display:grid;gap:10px}
+.retail a{display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:16px 18px;border:1.5px solid var(--line);border-radius:14px;background:#fff;transition:border-color .15s,transform .15s}
+.retail a:hover{border-color:var(--primary);transform:translateY(-1px)}
+.retail strong{font-family:var(--font-head);font-weight:600;display:block}
+.retail small{color:var(--text-2)}
+.retail .go{color:var(--primary);font-family:var(--font-head);font-weight:600;white-space:nowrap}
+.side{display:grid;gap:14px;align-content:start}
+.tip{border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:18px 20px;font-size:.95rem;color:#d7e7dd}
+.tip b{display:block;font-family:var(--font-head);color:#fff;margin-bottom:4px}
+.map-slot{aspect-ratio:16/10;border-radius:var(--radius);background:repeating-linear-gradient(45deg,#0b3a1f,#0b3a1f 14px,#0e4527 14px,#0e4527 28px);display:flex;align-items:center;justify-content:center;text-align:center;color:#9cc4ab;font-family:var(--font-head);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:14px;border:1px dashed rgba(255,255,255,.3)}
+
+/* products */
+.shelf{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;text-decoration:none}
+.prod .img{aspect-ratio:1/1;background:linear-gradient(160deg,#e9f4ee,#d5e8dd);display:flex;align-items:center;justify-content:center;color:var(--primary);font-family:var(--font-head);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;text-align:center;padding:10px;position:relative}
+.prod .tag{position:absolute;left:10px;top:10px;background:var(--warm);color:var(--ink);font-size:.68rem;font-weight:700;padding:4px 9px;border-radius:999px;letter-spacing:.04em}
+.prod .body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.prod h3{font-size:1rem}
+.prod .d{font-size:.84rem;color:var(--text-2)}
+.prod .p{margin-top:auto;font-family:var(--font-head);font-weight:600;color:var(--primary);padding-top:8px}
+.shelf-cta{text-align:center;margin-top:28px}
+
+/* farmers + proof */
+.farm{background:var(--card);border-block:1px solid var(--line)}
+.farm .wrap{display:grid;gap:30px;align-items:center}
+.farm .big{font-family:var(--font-head);font-weight:700;font-size:clamp(3rem,12vw,5.5rem);color:var(--primary);line-height:1}
+.farm h2{font-size:clamp(1.6rem,5vw,2.3rem);margin:10px 0 14px}
+.farm p{color:var(--text-2);margin-bottom:20px}
+.faces{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.face{aspect-ratio:3/4;border-radius:var(--radius);background:linear-gradient(170deg,#cfe7da,#9fc9b1);display:flex;align-items:flex-end;padding:12px;font-family:var(--font-head);font-size:.82rem;color:var(--ink);font-weight:500;position:relative;overflow:hidden}
+.face span{background:rgba(255,255,255,.88);padding:6px 10px;border-radius:10px}
+.face i{position:absolute;top:10px;right:10px;font-style:normal;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--primary)}
+
+.reviews{display:grid;gap:14px}
+.rev{background:var(--card);border:1.5px dashed var(--silver);border-radius:var(--radius);padding:22px}
+.rev .s{color:var(--warm);letter-spacing:2px;margin-bottom:8px}
+.rev p{color:var(--text-2);font-style:italic}
+.rev cite{display:block;margin-top:12px;font-style:normal;font-family:var(--font-head);font-size:.82rem;font-weight:500}
+.statrow{display:flex;flex-wrap:wrap;gap:12px 40px;margin-bottom:30px}
+.statrow div{font-family:var(--font-head);font-size:.85rem;color:var(--text-2)}
+.statrow b{display:block;font-size:2rem;color:var(--primary);font-weight:700}
+
+/* faq */
+.faq{max-width:760px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+summary{cursor:pointer;list-style:none;padding:18px 20px;font-family:var(--font-head);font-weight:500;display:flex;justify-content:space-between;gap:16px;min-height:56px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;color:var(--primary);line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding:0 20px 18px;color:var(--text-2)}
+
+/* closing */
+.close{background:var(--primary);color:#fff;text-align:center;border-radius:28px;margin:0 12px 40px;padding:56px 0}
+.close h2{font-size:clamp(1.8rem,6vw,2.8rem);margin-bottom:12px}
+.close p{max-width:46ch;margin:0 auto 24px;color:#d5efe2}
+.close .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.close .btn.ghost{color:#fff;border-color:#fff}
+.close .btn.ghost:hover{background:#fff;color:var(--primary)}
+
+footer{padding:0 0 30px;font-size:.8rem;color:var(--text-2)}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:14px;font-family:var(--font-head);font-weight:500}
+footer a{text-decoration:none;color:var(--text)}
+.fda{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+
+/* sticky mobile bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--card);border-top:1px solid var(--line);padding:10px 14px;display:flex;gap:10px;box-shadow:0 -6px 20px rgba(0,33,13,.1);transform:translateY(110%);transition:transform .25s}
+.sticky.show{transform:none}
+.sticky .btn{flex:1;padding:12px 10px;min-height:48px;font-size:.95rem}
+
+@media (min-width:760px){
+  body{padding-bottom:0;font-size:18px}
+  .sticky{display:none}
+  .top-links .btn.ghost{display:inline-flex}
+  .hero{padding:72px 0 88px}
+  .hero .wrap{grid-template-columns:1.05fr .95fr;align-items:center}
+  .reasons{grid-template-columns:repeat(3,1fr)}
+  .finder{grid-template-columns:1.1fr .9fr}
+  .row .btn{flex:0 0 auto}
+  .row input{flex:1 1 140px}
+  .row select{flex:0 1 170px}
+  .shelf{grid-template-columns:repeat(4,1fr)}
+  .farm .wrap{grid-template-columns:1fr 1fr}
+  .reviews{grid-template-columns:repeat(3,1fr)}
+  section{padding:88px 0}
+  #find,.close{margin:0 24px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.loc-embed{background:var(--card);color:var(--text);border-radius:var(--radius);overflow:hidden;min-height:560px;border:1px solid rgba(255,255,255,.2)}
+.loc-embed:empty{display:none}
+/* ---- Store locator (legacy sample styles, unused) (mirrors the live locator layout: list left, map right) ---- */
+.loc{display:grid;grid-template-columns:minmax(0,1fr);gap:0;background:var(--card);color:var(--text);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.2)}
+.loc-list{display:flex;flex-direction:column;min-width:0;border-bottom:1px solid var(--line)}
+.loc-search{padding:16px 16px 12px}
+.loc-search form{display:flex;gap:8px}
+.loc-search input{flex:1;min-width:0;font:inherit;padding:13px 14px;border:1.5px solid var(--ink);border-radius:10px;min-height:48px;background:#fff}
+.loc-search input:focus{outline:none;box-shadow:0 0 0 3px rgba(32,201,151,.4)}
+.loc-search .go{flex:0 0 auto;min-height:48px;padding:0 18px;border-radius:10px;border:0;background:var(--primary);color:#fff;font-family:var(--font-head);font-weight:600;cursor:pointer}
+.loc-meta{font-size:.82rem;color:var(--text-2);padding:0 16px 10px}
+.loc-meta b{color:var(--text)}
+.loc-filter{margin:0 16px 12px;display:flex;gap:8px;flex-wrap:wrap}
+.loc-filter .chip{cursor:default}
+.stores{overflow:auto;max-height:430px;border-top:1px solid var(--line)}
+.store{padding:16px;border-bottom:1px solid var(--line)}
+.store-top{display:flex;gap:12px;align-items:flex-start}
+.logo-tile{flex:0 0 44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:.7rem;color:#fff;text-align:center;line-height:1}
+.logo-tile.h{background:#d84727}.logo-tile.s{background:var(--primary-2)}.logo-tile.w{background:var(--primary)}.logo-tile.m{background:var(--blue)}
+.store h4{font-family:var(--font-head);font-size:1.02rem;font-weight:600;line-height:1.2}
+.store address{font-style:normal;font-size:.8rem;color:var(--text-2);margin-top:2px}
+.store .dist{margin-left:auto;font-family:var(--font-head);font-size:.8rem;white-space:nowrap;text-align:right}
+.status{display:inline-block;font-size:.68rem;font-family:var(--font-head);border:1px solid var(--alert);color:var(--alert);border-radius:999px;padding:2px 8px;margin-bottom:4px}
+.thumbs{display:flex;gap:6px;margin:12px 0 8px}
+.thumbs i{width:44px;height:52px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(160deg,#eef6f1,#d9eadf)}
+.store .stock{display:block;width:100%;text-align:center;background:var(--ink);color:#fff;font-family:var(--font-head);font-size:.8rem;letter-spacing:.04em;padding:11px;border-radius:6px;text-transform:uppercase}
+.store .upd{font-size:.72rem;color:var(--text-2)}
+.loc-map{min-height:260px;position:relative;background:repeating-linear-gradient(45deg,#e8f0ea,#e8f0ea 14px,#dfe9e2 14px,#dfe9e2 28px);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-2);font-family:var(--font-head);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;padding:20px}
+.loc-map .pin{position:absolute;width:26px;height:26px;border-radius:6px;background:#d84727;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.loc-map .pin.g{background:var(--primary-2)}.loc-map .pin.b{background:var(--blue)}
+.sample{display:inline-block;background:var(--warm);color:var(--ink);font-family:var(--font-head);font-weight:700;font-size:.66rem;letter-spacing:.08em;padding:3px 8px;border-radius:999px;text-transform:uppercase}
+.find-foot{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:20px;color:#d7e7dd;font-size:.95rem}
+.find-foot a{color:#fff;font-family:var(--font-head);font-weight:600}
+@media (min-width:900px){
+  .loc{grid-template-columns:380px minmax(0,1fr);min-height:620px}
+  .loc-list{border-bottom:0;border-right:1px solid var(--line)}
+  .stores{max-height:none;flex:1}
+  .loc-map{min-height:0}
+}
+</style>
+</head>
+<body>
+
+<div class="promo"><b>Free US shipping on every order</b> · Or find us at a store near you</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="https://shop.organicindiausa.com/" aria-label="Organic India">
+      <img src="https://shop.organicindiausa.com/cdn/shop/t/98/assets/logo.svg?v=104057814929277716391765169238" alt="Organic India" onerror="this.parentNode.classList.add('noimg');this.remove()">
+      <span class="word">Organic India</span>
+    </a>
+    <div class="top-links">
+      <a class="btn ghost" href="#shop">Shop online</a>
+      <a class="btn" href="#find">Find a store</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div>
+      <div class="stars"><span class="s" aria-hidden="true">★★★★★</span><span>Over 42,000 reviews</span></div>
+      <h1>Real tulsi. <em>Traced to the farmer</em> who grew it.</h1>
+      <p class="sub">Organic herbal teas and supplements from Organic India. Pick them up near you, or have them shipped free.</p>
+      <div class="ctas">
+        <a class="btn" href="#find">Find it near you</a>
+        <a class="btn ghost" href="#shop">Shop online</a>
+      </div>
+      <p class="micro">Third-party tested · Fully traceable herbs · Free US shipping</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="disc"></div>
+      <div class="slot a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg>Tea box</div>
+      <div class="slot b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg>Tea box</div>
+      <div class="badge-float"><b>12,000+</b>farming families<sup>1</sup></div>
+    </div>
+  </div>
+</section>
+
+<div class="certs">
+  <div class="wrap">
+    <ul>
+      <li>USDA Organic</li><li>Regenerative Organic Certified</li><li>Fairtrade</li><li>Certified B Corp</li><li>Non-GMO</li><li>Vegan</li>
+    </ul>
+  </div>
+</div>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Why Organic India</span>
+      <h2>Three things you can check, not just take our word for.</h2>
+    </div>
+    <div class="reasons">
+      <div class="reason"><div class="n">01</div><h3>Know your farmer</h3><p>Our herbs come from small farms we work with directly. You can meet the people behind the tulsi, moringa, rose and psyllium on our site.</p></div>
+      <div class="reason"><div class="n">02</div><h3>Tested, not just claimed</h3><p>Third-party tested, cGMP manufactured and formulated by herbal experts, with herbs that are fully traceable.</p></div>
+      <div class="reason"><div class="n">03</div><h3>Organic you can verify</h3><p>USDA Organic, Regenerative Organic Certified, Fairtrade and B Corp. Certifications you can look up, not a leaf on the box.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE TO FIND -->
+<section id="find">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Where to find us</span>
+      <h2>Grab it today. Pick a store near you or order online.</h2>
+      <p>Search by city or ZIP to see stores near you that carry Organic India, and what's in stock.</p>
+    </div>
+
+    <!-- ============ STORE LOCATOR EMBED (StoreLocators) ============ -->
+    <div class="loc-embed">
+      <div id="storelocators_root"></div>
+      <noscript><p style="padding:24px">Enable JavaScript to use the store finder, or <a href="https://organicindiausa.com/store-locator/">open the store locator</a>.</p></noscript>
+    </div>
+    <script>
+      window.storeLocatorsConfig = {
+        customerId: "68dc8612-3cee-4593-a0b9-6052304a2b98"
+      };
+    </script>
+    <script defer src="https://cdn.storelocators.com/locator/js/locator-stable.js"></script>
+    <!-- ============ END EMBED ============ -->
+
+    <div class="find-foot">
+      <span>Don't see a store near you?</span>
+      <a href="https://shop.organicindiausa.com/">Shop direct. Free US shipping on every order →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SHELF -->
+<section id="shop">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Start here</span>
+      <h2>Fan favorites, in store and online.</h2>
+    </div>
+    <div class="shelf">
+      <a class="prod" href="https://shop.organicindiausa.com/products/tulsi-tea-gift-box"><div class="img"><span class="tag">Tea</span>Product shot</div><div class="body"><h3>Tulsi Tea Gift Box</h3><span class="d">A sampler of our tulsi blends.</span><span class="p">Shop now</span></div></a>
+      <a class="prod" href="https://shop.organicindiausa.com/collections/fiber"><div class="img"><span class="tag">Fiber</span>Product shot</div><div class="body"><h3>Psyllium Powder</h3><span class="d">Organic psyllium fiber to support regularity.*</span><span class="p">$10.99</span></div></a>
+      <a class="prod" href="https://shop.organicindiausa.com/products/turmeric"><div class="img"><span class="tag">Capsules</span>Product shot</div><div class="body"><h3>Extra Strength Turmeric</h3><span class="d">Whole-herb turmeric capsules.</span><span class="p">$25.99</span></div></a>
+      <a class="prod" href="https://shop.organicindiausa.com/products/ashwagandha"><div class="img"><span class="tag">Gummies</span>Product shot</div><div class="body"><h3>Ashwagandha Gummies</h3><span class="d">Organic gummies, lemon-lime.</span><span class="p">$26.99</span></div></a>
+    </div>
+    <div class="shelf-cta"><a class="btn ghost" href="https://shop.organicindiausa.com/collections/best-sellers">See all best sellers</a></div>
+  </div>
+</section>
+
+<!-- FARMERS -->
+<section class="farm">
+  <div class="wrap">
+    <div>
+      <div class="big">12,000+<sup style="font-size:.3em;vertical-align:top">1</sup></div>
+      <h2>Farming families behind every jar and box.</h2>
+      <p>We work directly with small farmers, so the herb in your cup has a name and a place behind it. Meet a few of them.</p>
+      <a class="btn" href="https://shop.organicindiausa.com/pages/our-story">Read our story</a>
+    </div>
+    <div class="faces">
+      <div class="face"><i>Photo</i><span>Ranjana · Tulsi</span></div>
+      <div class="face"><i>Photo</i><span>Sujata · Rose</span></div>
+      <div class="face"><i>Photo</i><span>Mangalram · Psyllium</span></div>
+      <div class="face"><i>Photo</i><span>Ravindra · Moringa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section>
+  <div class="wrap">
+    <div class="statrow">
+      <div><b>42,000+</b>customer reviews</div>
+      <div><b>6</b>certifications</div>
+      <div><b>Free</b>US shipping, always</div>
+    </div>
+    <div class="reviews">
+      <div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div>
+      <div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div>
+      <div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Questions</span><h2>Quick answers.</h2></div>
+    <div class="faq">
+      <details><summary>Where can I buy Organic India near me?</summary><p>Use the store finder above and enter your city or ZIP code. You can also order direct from our shop with free US shipping.</p></details>
+      <details><summary>Is every product available in every store?</summary><p>Not always. The finder shows what's in stock at each store, and selection varies by location. If you don't see your favorite, order it online.</p></details>
+      <details><summary>Are the gummies vegan?</summary><p>Our fiber gummies are vegan and gluten free. Check each product page for the full details.</p></details>
+      <details><summary>Are your products organic and third-party tested?</summary><p>Our products are certified organic, third-party tested and made in cGMP facilities. Look for the certification marks on each package.</p></details>
+      <details><summary>What does shipping cost?</summary><p>Shipping is free on all US orders.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="close">
+  <div class="wrap">
+    <h2>Ready to try real tulsi?</h2>
+    <p>Find a store near you in seconds, or have it delivered free.</p>
+    <div class="ctas">
+      <a class="btn light" href="#find">Find a store</a>
+      <a class="btn ghost" href="https://shop.organicindiausa.com/">Shop online</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="https://shop.organicindiausa.com/">Shipping</a>
+      <a href="https://shop.organicindiausa.com/">FAQs</a>
+      <a href="https://shop.organicindiausa.com/">Privacy</a>
+      <a href="https://shop.organicindiausa.com/">Terms</a>
+      <a href="https://organicindiausa.com/store-locator/">Store locator</a>
+    </div>
+    <div class="fda">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</div>
+    <p><sup>1</sup> Based on Organic India's farmer network; confirm figure before launch.</p>
+    <p style="margin-top:8px">© Organic India USA. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn" href="#find">Find a store</a>
+  <a class="btn ghost" href="https://shop.organicindiausa.com/">Shop online</a>
+</div>
+
+<script>
+/* ---- Locator fallback: if the embed hasn't rendered after 6s, offer the live locator ---- */
+setTimeout(function(){
+  var r=document.getElementById('storelocators_root');
+  if(r && !r.children.length){
+    r.innerHTML='<div style="padding:40px 24px;text-align:center"><p style="margin-bottom:16px">The store finder is loading. If it doesn't appear, open it in a new tab.</p><a class="btn" href="https://organicindiausa.com/store-locator/" target="_blank" rel="noopener">Open store locator</a></div>';
+  }
+},6000);
+
+/* ---- Sticky bar: show after hero, hide while locator is on screen ---- */
+(function(){
+  var s=document.getElementById('sticky'),find=document.getElementById('find'),hero=document.querySelector('.hero');
+  var heroOut=false,findIn=false;
+  function upd(){s.classList.toggle('show',heroOut&&!findIn);}
+  new IntersectionObserver(function(en){heroOut=!en[0].isIntersecting;upd();}).observe(hero);
+  new IntersectionObserver(function(en){findIn=en[0].isIntersecting;upd();},{threshold:.25}).observe(find);
+})();
+</script>
+</body>
+</html>
