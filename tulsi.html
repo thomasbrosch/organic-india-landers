@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Organic India Tulsi Lander</title>
+<title>Organic India Tulsi Lander v3</title>
 <meta name="description" content="Organic India herbal teas and supplements, traceable to the farmers who grow them. Find a store near you or shop online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -264,6 +264,55 @@ footer a{text-decoration:none;color:var(--text)}
   .stores{max-height:none;flex:1}
   .loc-map{min-height:0}
 }
+
+/* ===== v3 additions (Gruns-informed) ===== */
+.sec-cta{text-align:center;margin-top:36px}
+.sec-cta .note{display:block;margin-top:10px;font-size:.88rem;color:var(--text-2)}
+.promise{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:18px;font-size:.92rem;color:var(--text-2)}
+.promise b{color:var(--ink);font-family:var(--font-head)}
+.press{background:#fff;border-bottom:1px solid var(--line);padding:16px 0}
+.press .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;align-items:center;font-family:var(--font-head);font-size:.8rem;color:var(--text-2);text-transform:uppercase;letter-spacing:.08em}
+.press i{font-style:normal;border:1px dashed var(--mute);border-radius:6px;padding:6px 14px;color:#6b7f74}
+.vs{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;font-size:.95rem}
+.vs th,.vs td{padding:14px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.vs tr:last-child td{border-bottom:0}
+.vs thead th{font-family:var(--font-head);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;background:#f3f6f4;color:var(--text-2)}
+.vs thead th.us{background:var(--primary);color:#fff}
+.vs td.us{background:#eef7f1;font-weight:600;color:var(--ink)}
+.vs td.us:before{content:"✓ ";color:var(--primary)}
+.vs td.them{color:var(--text-2)}
+.vs th:first-child{width:34%}
+.fn{font-size:.82rem;color:var(--text-2);margin-top:10px}
+.test{background:var(--ink);color:#fff}
+.test .head h2,.test .head p{color:#fff}
+.test .eyebrow{color:var(--mint)}
+.test-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:8px}
+.test-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:22px}
+.test-card h3{font-size:1.1rem;color:#fff;margin-bottom:6px}
+.test-card p{color:#d7e7dd;font-size:.95rem}
+.test-card .ph{display:inline-block;margin-top:10px;font-family:var(--font-head);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;background:var(--warm);color:var(--ink);padding:3px 9px;border-radius:999px;font-weight:700}
+.subs{display:grid;gap:12px;margin:0 0 28px}
+.subs .opt{display:flex;gap:14px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px 18px}
+.subs .opt.on{border-color:var(--primary);background:#eef7f1}
+.subs .dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--primary);flex:none;position:relative}
+.subs .opt.on .dot:after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--primary)}
+.subs .t{flex:1;min-width:0}.subs .t b{font-family:var(--font-head);display:block}.subs .t span{font-size:.88rem;color:var(--text-2)}
+.subs .save{font-family:var(--font-head);font-weight:700;font-size:.78rem;background:var(--warm);color:var(--ink);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.subs-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:34px}
+.subs-wrap h3{font-size:1.25rem;margin-bottom:4px}
+.subs-wrap .sub-note{font-size:.9rem;color:var(--text-2);margin-bottom:16px}
+.subs-wrap .btn{width:100%}
+.rtabs input{position:absolute;opacity:0;pointer-events:none}
+.rtabs{display:block}.rtabs label{margin:0 8px 10px 0}
+.rtabs label{font-family:var(--font-head);font-weight:600;font-size:.9rem;padding:10px 18px;border-radius:999px;border:2px solid var(--line);background:#fff;cursor:pointer;min-height:44px;display:inline-flex;align-items:center}
+.rtabs input:checked+label{background:var(--primary);border-color:var(--primary);color:#fff}
+.rtabs input:focus-visible+label{outline:3px solid var(--mint);outline-offset:2px}
+.rtabs .pane{display:none}
+#t1:checked~.p1,#t2:checked~.p2,#t3:checked~.p3{display:block}
+.ugc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:30px}
+.ugc .v{aspect-ratio:9/14;border-radius:14px;background:linear-gradient(160deg,#dfe9e2,#c9d9ce);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--text-2);font-family:var(--font-head);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:10px}
+.ugc .v:before{content:"▶";display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#fff;color:var(--primary);font-size:1rem}
+@media (min-width:760px){.test-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ugc{grid-template-columns:repeat(4,minmax(0,1fr))}.subs{grid-template-columns:repeat(2,minmax(0,1fr))}.vs th,.vs td{padding:16px 20px}}
 </style>
 </head>
 <body>
@@ -296,6 +345,7 @@ footer a{text-decoration:none;color:var(--text)}
         <a class="btn ghost" href="#shop">Shop online</a>
       </div>
       <p class="micro">Third-party tested · Fully traceable herbs · Free US shipping</p>
+      <div class="promise"><span aria-hidden="true">🛡️</span><div><b>Our quality promise.</b> Wrong item or a defect? Tell us within 14 days and we replace it at no cost.<sup>2</sup></div></div>
     </div>
     <div class="hero-art" aria-hidden="true">
       <div class="disc"></div>
@@ -314,6 +364,7 @@ footer a{text-decoration:none;color:var(--text)}
   </div>
 </div>
 
+<div class="press"><div class="wrap"><span>As seen in</span><i>Press logo</i><i>Press logo</i><i>Press logo</i><i>Press logo</i></div></div>
 <!-- WHY -->
 <section>
   <div class="wrap">
@@ -325,6 +376,44 @@ footer a{text-decoration:none;color:var(--text)}
       <div class="reason"><div class="n">01</div><h3>Know your farmer</h3><p>Our herbs come from small farms we work with directly. You can meet the people behind the tulsi, moringa, rose and psyllium on our site.</p></div>
       <div class="reason"><div class="n">02</div><h3>Tested, not just claimed</h3><p>Third-party tested, cGMP manufactured and formulated by herbal experts, with herbs that are fully traceable.</p></div>
       <div class="reason"><div class="n">03</div><h3>Organic you can verify</h3><p>USDA Organic, Regenerative Organic Certified, Fairtrade and B Corp. Certifications you can look up, not a leaf on the box.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- US VS THEM -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">How we compare</span>
+      <h2>Organic India tulsi vs. a typical grocery-aisle herbal tea.</h2>
+    </div>
+    <table class="vs">
+      <thead><tr><th></th><th class="us">Organic India</th><th>Typical herbal tea</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Where the herb comes from</th><td class="us">Small farms we work with directly, traceable</td><td class="them">Origin often not stated on the box</td></tr>
+        <tr><th scope="row">Organic certification</th><td class="us">USDA Organic and Regenerative Organic Certified</td><td class="them">Varies by brand</td></tr>
+        <tr><th scope="row">Testing</th><td class="us">Third-party tested, made in cGMP facilities</td><td class="them">Varies by brand</td></tr>
+        <tr><th scope="row">Farmer standards</th><td class="us">Fairtrade and Certified B Corp</td><td class="them">Varies by brand</td></tr>
+        <tr><th scope="row">Where to buy</th><td class="us">Stores near you, or direct with free US shipping</td><td class="them">Grocery aisle</td></tr>
+      </tbody>
+    </table>
+    <p class="fn">Comparison is general and not about any specific brand. Legal to review before launch.</p>
+    <div class="sec-cta"><a class="btn" href="#find">Find a store near you</a> <a class="btn ghost" href="#shop">Order online</a></div>
+  </div>
+</section>
+
+<!-- TESTING / SOURCING -->
+<section class="test">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Proof, not promises</span>
+      <h2>Tested, traced and certified.</h2>
+      <p>Look for these on every box.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card"><h3>Third-party tested</h3><p>Independent lab testing, plus cGMP manufacturing.</p><span class="ph">Add lab / test detail</span></div>
+      <div class="test-card"><h3>Traceable herbs</h3><p>Know the farm and the farmer behind the herb.</p><span class="ph">Add traceability lookup link</span></div>
+      <div class="test-card"><h3>Certified organic</h3><p>USDA Organic and Regenerative Organic Certified. Certifications you can look up.</p></div>
     </div>
   </div>
 </section>
@@ -365,6 +454,15 @@ footer a{text-decoration:none;color:var(--text)}
       <span class="eyebrow">Start here</span>
       <h2>Fan favorites, in store and online.</h2>
     </div>
+    <div class="subs-wrap">
+      <h3>Tulsi Tea Gift Box <span class="sample">Offer to confirm</span></h3>
+      <p class="sub-note">Subscribe and keep your tulsi stocked. Skip or change before your invoice date in your account.</p>
+      <div class="subs">
+        <div class="opt"><span class="dot"></span><div class="t"><b>One-time purchase</b><span>Free US shipping</span></div></div>
+        <div class="opt on"><span class="dot"></span><div class="t"><b>Subscribe &amp; save</b><span>Free US shipping · Change anytime</span></div><span class="save">Save [X]%</span></div>
+      </div>
+      <a class="btn" href="https://shop.organicindiausa.com/products/tulsi-tea-gift-box">Shop the Tulsi Tea Gift Box</a>
+    </div>
     <div class="shelf">
       <a class="prod" href="https://shop.organicindiausa.com/products/tulsi-tea-gift-box"><div class="img"><span class="tag">Tea</span>Product shot</div><div class="body"><h3>Tulsi Tea Gift Box</h3><span class="d">A sampler of our tulsi blends.</span><span class="p">Shop now</span></div></a>
       <a class="prod" href="https://shop.organicindiausa.com/collections/fiber"><div class="img"><span class="tag">Fiber</span>Product shot</div><div class="body"><h3>Psyllium Powder</h3><span class="d">Organic psyllium fiber to support regularity.*</span><span class="p">$10.99</span></div></a>
@@ -401,11 +499,15 @@ footer a{text-decoration:none;color:var(--text)}
       <div><b>6</b>certifications</div>
       <div><b>Free</b>US shipping, always</div>
     </div>
-    <div class="reviews">
-      <div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div>
-      <div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div>
-      <div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div>
+    <div class="rtabs">
+      <input type="radio" name="rt" id="t1" checked><label for="t1">Tulsi tea</label>
+      <input type="radio" name="rt" id="t2"><label for="t2">Fiber</label>
+      <input type="radio" name="rt" id="t3"><label for="t3">Capsules &amp; gummies</label>
+      <div class="pane p1"><div class="reviews"><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div></div></div><div class="pane p2"><div class="reviews"><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div></div></div><div class="pane p3"><div class="reviews"><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div><div class="rev"><div class="s">★★★★★</div><p>[Paste a verbatim 5-star review here]</p><cite>Verified buyer</cite></div></div></div>
     </div>
+    <div class="ugc"><div class="v">Customer video</div><div class="v">Customer video</div><div class="v">Customer video</div><div class="v">Customer video</div></div>
+    <p class="fn">Placeholders: swap in verbatim reviews and customer-approved video. Any paid or gifted endorsement needs a clear disclosure.</p>
+    <div class="sec-cta"><a class="btn" href="#find">Find a store near you</a> <a class="btn ghost" href="#shop">Order online</a><span class="note">Free US shipping on every order</span></div>
   </div>
 </section>
 
@@ -418,6 +520,8 @@ footer a{text-decoration:none;color:var(--text)}
       <details><summary>Is every product available in every store?</summary><p>Not always. The finder shows what's in stock at each store, and selection varies by location. If you don't see your favorite, order it online.</p></details>
       <details><summary>Are the gummies vegan?</summary><p>Our fiber gummies are vegan and gluten free. Check each product page for the full details.</p></details>
       <details><summary>Are your products organic and third-party tested?</summary><p>Our products are certified organic, third-party tested and made in cGMP facilities. Look for the certification marks on each package.</p></details>
+            <details><summary>What is your return policy?</summary><p>To protect customer health and safety, we do not accept product returns. If you receive a defective or incorrect item, email info@organicindiausa.com within 14 days of receipt and we will review it and replace it at no cost. Purchases from retail stores or other websites follow that seller's return policy.</p></details>
+      <details><summary>Can I change my subscription?</summary><p>Yes. Update your shipping address or details in your account before your invoice date.</p></details>
       <details><summary>What does shipping cost?</summary><p>Shipping is free on all US orders.</p></details>
     </div>
   </div>
@@ -446,6 +550,7 @@ footer a{text-decoration:none;color:var(--text)}
     </div>
     <div class="fda">*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</div>
     <p><sup>1</sup> Based on Organic India's farmer network; confirm figure before launch.</p>
+    <p><sup>2</sup> Per Organic India USA returns policy: defective or incorrect orders reported within 14 days are replaced at no cost. No refunds on retail or third-party purchases.</p>
     <p style="margin-top:8px">© Organic India USA. All rights reserved.</p>
   </div>
 </footer>
@@ -460,7 +565,7 @@ footer a{text-decoration:none;color:var(--text)}
 setTimeout(function(){
   var r=document.getElementById('storelocators_root');
   if(r && !r.children.length){
-    r.innerHTML='<div style="padding:40px 24px;text-align:center"><p style="margin-bottom:16px">The store finder is loading. If it doesn't appear, open it in a new tab.</p><a class="btn" href="https://organicindiausa.com/store-locator/" target="_blank" rel="noopener">Open store locator</a></div>';
+    r.innerHTML='<div style="padding:40px 24px;text-align:center"><p style="margin-bottom:16px">The store finder is loading. If it does not appear, open it in a new tab.</p><a class="btn" href="https://organicindiausa.com/store-locator/" target="_blank" rel="noopener">Open store locator</a></div>';
   }
 },6000);
 
