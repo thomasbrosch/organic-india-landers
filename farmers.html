@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.storelocators.com/locator/css/locator-stable.css">
 <style>
 /* Brand fonts: drop the licensed files next to this page (or on the Shopify/WP CDN) and they take over automatically.
    Until then Rubik / Figtree load as stand-ins. */
@@ -214,7 +216,16 @@ footer a{text-decoration:none;color:var(--text)}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
-.loc-embed{background:var(--card);color:var(--text);border-radius:var(--radius);overflow:hidden;min-height:560px;border:1px solid rgba(255,255,255,.2)}
+.loc-embed{background:#fff;color:var(--text);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.2);
+  /* host-supplied variables the StoreLocators stylesheet expects */
+  --sl-stickyHeaderHeight:0px;--sl-desktopColumnWidth:300px;--sl-maxDesktopHeight:640px}
+.loc-embed #storelocators{min-height:560px}
+.loc-embed #map_holder{min-height:320px}
+.loc-embed #storelocators_root{width:100%}
+/* keep the page's resets and link/button styles from leaking into the widget */
+.loc-embed img{display:inline-block;max-width:none}
+.loc-embed a{text-decoration:none}
+.loc-embed input,.loc-embed button,.loc-embed select{font-family:inherit}
 .loc-embed:empty{display:none}
 /* ---- Store locator (legacy sample styles, unused) (mirrors the live locator layout: list left, map right) ---- */
 .loc{display:grid;grid-template-columns:minmax(0,1fr);gap:0;background:var(--card);color:var(--text);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.2)}
